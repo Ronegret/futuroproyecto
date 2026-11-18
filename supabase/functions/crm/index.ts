@@ -80,8 +80,11 @@ const COLS: Record<string, string[]> = {
   clients: ["name", "company", "business_type", "sector", "email", "phone", "city", "website", "status", "source", "priority", "tags", "notes", "next_action", "next_action_date", "estimated_value"],
   projects: ["client_id", "title", "services", "agreement", "amount_total", "monthly_fee", "start_date", "due_date", "status", "progress", "deliverables", "notes"],
   payments: ["client_id", "project_id", "concept", "amount", "due_date", "paid_at", "status", "method", "invoice_number", "notes"],
-  activities: ["client_id", "type", "content"],
+  activities: ["client_id", "type", "content", "ref"],
+  ventures: ["name", "category", "status", "url", "repo_url", "description", "stack", "monthly_revenue", "next_step", "pinned", "live_ok", "last_update", "sort", "notes"],
+  emails: ["gmail_thread_id", "subject", "from_name", "from_email", "date", "snippet", "category", "client_id", "venture_id", "status", "needs_reply", "url", "notes"],
 };
+const SETTING_KEYS = ["layout", "prefs", "seen"];
 function clean(table: string, row: Record<string, unknown>) {
   const out: Record<string, unknown> = {};
   for (const c of COLS[table]) {
@@ -96,13 +99,18 @@ function clean(table: string, row: Record<string, unknown>) {
 }
 
 async function loadAll() {
-  const [clients, projects, payments, activities] = await Promise.all([
+  const [clients, projects, payments, activities, ventures, emails, settings] = await Promise.all([
     sql`select * from crm.clients order by updated_at desc`,
     sql`select * from crm.projects order by coalesce(due_date, '2999-12-31') asc`,
     sql`select * from crm.payments order by coalesce(due_date, '2999-12-31') asc`,
     sql`select * from crm.activities order by created_at desc limit 800`,
+    sql`select * from crm.ventures order by pinned desc, sort asc, name asc`,
+    sql`select * from crm.emails order by date desc nulls last limit 400`,
+    sql`select key, value from crm.settings where key in ${sql(SETTING_KEYS)}`,
   ]);
-  return { clients, projects, payments, activities };
+  const prefs: Record<string, unknown> = {};
+  for (const r of settings) { try { prefs[r.key] = JSON.parse(r.value); } catch { prefs[r.key] = null; } }
+  return { clients, projects, payments, activities, ventures, emails, settings: prefs };
 }
 
 Deno.serve(async (req) => {
@@ -160,6 +168,14 @@ Deno.serve(async (req) => {
       return json({ row: res[0] });
     }
 
+    if (action === "set_setting") {
+      const key = String(body.key);
+      if (!SETTING_KEYS.includes(key)) return json({ error: "key" }, 400);
+      const value = JSON.stringify(body.value ?? null).slice(0, 50000);
+      await sql`insert into crm.settings (key, value) values (${key}, ${value}) on conflict (key) do update set value = excluded.value, updated_at = now()`;
+      return json({ ok: true });
+    }
+
     if (action === "remove") {
       const table = String(body.table);
       if (!COLS[table]) return json({ error: "table" }, 400);
@@ -172,7 +188,7 @@ Deno.serve(async (req) => {
       const d = body.data ?? {};
       let n = 0;
       await sql.begin(async (tx) => {
-        for (const t of ["clients", "projects", "payments", "activities"]) {
+        for (const t of ["clients", "projects", "payments", "activities", "ventures", "emails"]) {
           for (const r of d[t] ?? []) {
             const row: Record<string, unknown> = { id: r.id, ...clean(t, r) };
             if (r.created_at) row.created_at = r.created_at;
