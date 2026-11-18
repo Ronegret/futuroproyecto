@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#06070B">
-<title>Futuro Proyecto · Webs, IA y Automatización — Rodrigo Negrete</title>
+<title>RODD. Studio · Webs, IA y Automatización para negocios</title>
 <meta name="description" content="Webs que venden, automatizaciones, chatbots y agentes de voz con IA, contenido para redes y portales a medida. Precios claros desde Barcelona.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#06070B;--bg2:#0D0F16;--surf:#11131C;--surf2:#181B27;
+  --bg:#07070A;--bg2:#0D0F16;--surf:#11131C;--surf2:#181B27;
   --t1:#F4F5FA;--t2:#A6ABBD;--t3:#6F7489;
   --line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.15);--bord:rgba(34,211,238,.32);--bord2:rgba(139,92,246,.4);
   --brand:#8B5CF6;--brand2:#22D3EE;--mint:rgba(139,92,246,.15);--accent:#C6FF3D;--accent2:#D8FF73;--peach:rgba(198,255,61,.12);--sun:#22D3EE;--sunsoft:rgba(34,211,238,.12);--ink:#06070B;--ink2:#0D0F16;
@@ -34,16 +34,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 ::selection{background:var(--accent);color:#06070B}
 .mono{font-family:var(--fm)}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hl{position:relative;white-space:nowrap;z-index:0}
-.hl::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.02em;height:.14em;background:var(--grad);border-radius:.1em;box-shadow:0 0 18px rgba(34,211,238,.6);z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease) .55s}
-.loaded .hl::after,.in .hl::after,.head.in .hl::after{transform:scaleX(1)}
+.hl{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em;background:linear-gradient(100deg,#C4B5FD 0%,#8B5CF6 35%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em 0 .02em;white-space:nowrap}
+
 .wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
 section{position:relative;padding:76px 0 36px}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:700}
 
 /* bloques oscuros */
-.dark{--surf:#151829;--surf2:#1C2035;
-  background:radial-gradient(120% 80% at 100% 0%,rgba(139,92,246,.22),transparent 55%),radial-gradient(90% 70% at 0% 100%,rgba(34,211,238,.14),transparent 60%),#0A0B14;border:1px solid var(--line);color:var(--t1);border-radius:32px;margin:28px 10px;padding:64px 0 52px;overflow:hidden}
+.dark{--surf:#14151D;--surf2:#1A1C26;
+  background:radial-gradient(110% 70% at 100% 0%,rgba(139,92,246,.12),transparent 55%),#0D0E14;border:1px solid var(--line);color:var(--t1);border-radius:32px;margin:28px 10px;padding:64px 0 52px;overflow:hidden}
 .dark .grad{background:linear-gradient(120deg,#22D3EE,#C6FF3D);-webkit-background-clip:text;background-clip:text}
 
 @media(min-width:900px){.dark{margin:36px 24px}}
@@ -51,8 +50,9 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:700}
 /* ---------- fondo ---------- */
 #bg{position:fixed;inset:0;z-index:-2;width:100%;height:100%}
 .aura{position:fixed;inset:-20%;z-index:-3;pointer-events:none;
-  background:radial-gradient(40% 34% at 88% 6%,rgba(139,92,246,.28),transparent 70%),radial-gradient(40% 34% at 6% 92%,rgba(34,211,238,.16),transparent 70%),radial-gradient(28% 26% at 60% 45%,rgba(198,255,61,.05),transparent 70%);
-  animation:breathe 12s ease-in-out infinite alternate}
+  background:radial-gradient(36% 30% at 85% 4%,rgba(139,92,246,.13),transparent 70%),radial-gradient(34% 30% at 8% 96%,rgba(34,211,238,.07),transparent 70%);
+  animation:breathe 14s ease-in-out infinite alternate}
+#bg{opacity:.75}
 @keyframes breathe{to{transform:scale(1.1) translateY(-3%);opacity:.8}}
 .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .bgrid{position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;-webkit-mask:radial-gradient(ellipse 80% 60% at 50% 30%,#000 30%,transparent 80%);mask:radial-gradient(ellipse 80% 60% at 50% 30%,#000 30%,transparent 80%)}
@@ -82,20 +82,47 @@ body.cur-down #cur-r{width:28px;height:28px;margin:-14px 0 0 -14px}
 .tap{position:fixed;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;pointer-events:none;z-index:199;border:2px solid var(--brand);animation:tap .6s var(--ease) forwards}
 @keyframes tap{to{transform:scale(7);opacity:0}}
 
-/* ---------- top bar ---------- */
-.top{position:fixed;top:0;left:0;right:0;z-index:80;padding:calc(10px + var(--sat)) 16px 10px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,backdrop-filter .3s,border-color .3s,box-shadow .3s;border-bottom:1px solid transparent}
-.top.solid{background:rgba(6,7,11,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:800;font-size:17px;letter-spacing:-.02em}
-.brand-mark{width:36px;height:36px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-weight:800;font-size:14px;color:#06070B;position:relative;box-shadow:0 0 20px rgba(139,92,246,.5)}
-.brand-mark::after{content:"";position:absolute;right:-3px;bottom:-3px;width:11px;height:11px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
-.brand small{display:block;font-family:var(--fb);font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.08em;text-transform:uppercase}
-.top-cta{font-size:13px;font-weight:800;padding:10px 15px;border-radius:var(--rb);background:var(--accent);color:#06070B;transition:transform .3s var(--spring)}
-.top-cta:hover{transform:scale(1.05)}
-.top-links{display:none;gap:24px;font-size:14.5px;font-weight:600;color:var(--t2)}
-.top-links a{position:relative}
-.top-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .3s var(--ease)}
-.top-links a:hover{color:var(--t1)}.top-links a:hover::after{transform:scaleX(1)}
+/* ---------- top bar (estilo rodd.es) ---------- */
+.top{position:fixed;top:0;left:0;right:0;z-index:95;padding:calc(12px + var(--sat)) 18px 12px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;transition:background .35s,backdrop-filter .35s,border-color .35s;border-bottom:1px solid transparent}
+@media(min-width:900px){.top{grid-template-columns:1fr auto 1fr;padding-left:36px;padding-right:36px}}
+.top.solid{background:rgba(7,7,10,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-color:var(--line)}
+.logo{display:inline-flex;align-items:center;gap:10px;justify-self:start}
+.logo-word{font-family:var(--fd);font-weight:800;font-size:23px;letter-spacing:-.05em;line-height:1;color:#fff;display:inline-flex;align-items:baseline}
+.logo-word i{font-style:normal;color:transparent;background:linear-gradient(120deg,#8B5CF6,#22D3EE);-webkit-background-clip:text;background-clip:text;margin-left:1px;display:inline-block;transition:transform .5s var(--spring)}
+.logo:hover .logo-word i{transform:translateY(-4px) scale(1.25)}
+.logo-tag{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);padding:5px 9px;border:1px solid var(--line2);border-radius:var(--rb);line-height:1}
+@media(max-width:360px){.logo-tag{display:none}}
+.top-links{display:none;gap:30px;font-size:14px;font-weight:500;color:#9A9CA8}
+.top-links a{position:relative;padding:6px 0;transition:color .25s}
+.top-links a:hover,.top-links a.on{color:#fff}
+.top-links a::after{content:"";position:absolute;left:50%;bottom:-2px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--brand2);transform:scale(0);transition:transform .3s var(--spring)}
+.top-links a.on::after,.top-links a:hover::after{transform:scale(1)}
 @media(min-width:900px){.top-links{display:flex}}
+.top-right{display:flex;align-items:center;gap:8px;justify-self:end}
+.talk{display:inline-flex;align-items:center;gap:10px;padding:5px 5px 5px 16px;border-radius:var(--rb);background:#F2F2F4;color:#0A0A0D;font-size:14px;font-weight:700;transition:transform .35s var(--spring),box-shadow .35s;box-shadow:0 0 0 1px rgba(255,255,255,.2),0 8px 24px -8px rgba(255,255,255,.25)}
+.talk:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(255,255,255,.4),0 10px 30px -6px rgba(139,92,246,.6)}
+.talk-ic{width:32px;height:32px;border-radius:50%;background:#0A0A0D;color:#fff;display:grid;place-items:center;transition:transform .4s var(--spring)}
+.talk-ic svg{width:15px;height:15px}
+.talk:hover .talk-ic{transform:rotate(45deg)}
+.burger{width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:rgba(255,255,255,.04);display:grid;place-items:center;position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:#fff;transition:transform .45s var(--spring),top .3s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:25px}
+.menu-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
+@media(min-width:900px){.burger{display:none}}
+.menu{position:fixed;inset:0;z-index:94;background:radial-gradient(80% 60% at 100% 0%,rgba(139,92,246,.18),transparent 60%),#07070A;display:flex;flex-direction:column;justify-content:space-between;padding:calc(92px + var(--sat)) 24px calc(30px + var(--sab));clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .menu{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible}
+.menu nav{display:grid;gap:4px}
+.menu nav a{display:flex;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-family:var(--fd);font-weight:700;font-size:clamp(30px,8.5vw,44px);letter-spacing:-.03em;line-height:1.1;opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .6s var(--ease),color .25s}
+.menu nav a small{font-family:var(--fm);font-size:11px;color:var(--brand2);font-weight:500;letter-spacing:.05em;min-width:22px}
+.menu nav a:hover{color:var(--brand2)}
+.menu-open .menu nav a{opacity:1;transform:none}
+.menu-foot{display:grid;gap:12px;opacity:0;transition:opacity .5s .45s}
+.menu-open .menu-foot{opacity:1}
+.menu-foot .row{display:flex;gap:8px;flex-wrap:wrap}
+.menu-foot .row a{padding:10px 14px;border-radius:var(--rb);border:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--t2)}
+.menu-foot p{font-size:12px;color:var(--t3)}
+body.menu-open{overflow:hidden}
 
 /* ---------- botones ---------- */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 22px;border-radius:var(--rb);font-family:var(--fb);font-weight:700;font-size:15.5px;overflow:hidden;isolation:isolate;transition:transform .35s var(--spring),box-shadow .35s var(--ease),background .3s,color .3s;user-select:none;white-space:nowrap;min-height:50px}
@@ -511,6 +538,8 @@ footer .pf a:hover{background:var(--accent);color:#06070B}
 .dock .cnt{position:absolute;top:1px;right:5px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--accent);color:#06070B;font-size:10px;font-weight:800;display:grid;place-items:center;transform:scale(0);transition:transform .4s var(--spring)}
 .dock .cnt.show{transform:scale(1)}
 @media(max-width:380px){.dock a{padding:7px 8px;font-size:9.5px}}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}.fab{bottom:24px}}
+.hero h1 .hl{font-size:1.1em;padding-right:.12em}
 .bump{animation:bump .5s var(--spring)}
 @keyframes bump{40%{transform:scale(1.25)}}
 
@@ -575,17 +604,36 @@ footer .pf a:hover{background:var(--accent);color:#06070B}
 </style>
 </head>
 <body>
-<div id="pre"><div style="text-align:center"><div class="pre-logo">RN<span style="color:var(--accent)">.</span></div><div class="pre-bar"><i></i></div></div></div>
+<div id="pre"><div style="text-align:center"><div class="pre-logo">RODD<span style="background:linear-gradient(120deg,#8B5CF6,#22D3EE);-webkit-background-clip:text;background-clip:text;color:transparent">.</span></div><div class="pre-bar"><i></i></div></div></div>
 <div id="prog"></div>
 <canvas id="bg" aria-hidden="true"></canvas>
-<div class="aura"></div><div class="bgrid"></div><div class="grain"></div>
+<div class="aura"></div>
 <div id="cur"></div><div id="cur-r"><span>VER</span></div>
 
 <header class="top" id="top">
-  <a href="#inicio" class="brand" data-go="inicio"><span class="brand-mark">RN</span><span>Futuro Proyecto<small>web · ia · automatización</small></span></a>
-  <nav class="top-links"><a href="#servicios" data-go="servicios">Servicios</a><a href="#sectores" data-go="sectores">Sectores</a><a href="#proyectos" data-go="proyectos">Proyectos</a><a href="#planes" data-go="planes">Planes</a><a href="#calculadora" data-go="calculadora">Presupuesto</a></nav>
-  <a class="top-cta" href="#contacto" data-go="contacto">Reunión gratis</a>
+  <a href="#inicio" class="logo" data-go="inicio" aria-label="RODD. Studio, inicio"><span class="logo-word">RODD<i>.</i></span><span class="logo-tag">Studio IA</span></a>
+  <nav class="top-links" aria-label="Principal"><a href="#servicios" data-go="servicios">Servicios</a><a href="#sectores" data-go="sectores">Casos</a><a href="#proyectos" data-go="proyectos">Proyectos</a><a href="#planes" data-go="planes">Planes</a><a href="#calculadora" data-go="calculadora">Presupuesto</a></nav>
+  <div class="top-right">
+    <a class="talk" href="#contacto" data-go="contacto">Hablemos<span class="talk-ic"><svg data-i="arrowUR"></svg></span></a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
 </header>
+<div class="menu" id="menu">
+  <nav aria-label="Menú móvil">
+    <a href="#servicios" data-go="servicios" style="transition-delay:.12s"><small>01</small>Servicios</a>
+    <a href="#automatizamos" data-go="automatizamos" style="transition-delay:.16s"><small>02</small>Qué automatizamos</a>
+    <a href="#sectores" data-go="sectores" style="transition-delay:.20s"><small>03</small>Casos por sector</a>
+    <a href="#proyectos" data-go="proyectos" style="transition-delay:.24s"><small>04</small>Proyectos</a>
+    <a href="#proceso" data-go="proceso" style="transition-delay:.28s"><small>05</small>Cómo trabajamos</a>
+    <a href="#planes" data-go="planes" style="transition-delay:.32s"><small>06</small>Planes</a>
+    <a href="#calculadora" data-go="calculadora" style="transition-delay:.36s"><small>07</small>Presupuesto</a>
+  </nav>
+  <div class="menu-foot">
+    <a class="btn btn-shine btn-block" href="https://wa.me/34653567610?text=Hola%20Rodrigo%2C%20vengo%20de%20futuroproyecto.rodrigonegrete.es%20y%20quiero%20agendar%20una%20reuni%C3%B3n." target="_blank" rel="noopener"><svg data-i="msg"></svg>Reunión gratis por WhatsApp</a>
+    <div class="row"><a href="https://rodd.es" target="_blank" rel="noopener">rodd.es ↗</a><a href="https://rodrigonegrete.es" target="_blank" rel="noopener">rodrigonegrete.es ↗</a><a href="https://db.rodrigonegrete.es" target="_blank" rel="noopener">db.rodrigonegrete.es ↗</a></div>
+    <p>RODD. Studio · Barcelona · Webs, IA y automatización</p>
+  </div>
+</div>
 
 <main>
 <!-- HERO -->
@@ -789,8 +837,8 @@ footer .pf a:hover{background:var(--accent);color:#06070B}
 
 <footer>
   <div class="wrap">
-    <div class="brand" style="justify-content:center"><span class="brand-mark">RN</span><span style="text-align:left">Rodrigo Negrete<small>UX/UI · IA · Automatización</small></span></div>
-    <div class="pf"><a href="https://rodrigonegrete.es" target="_blank" rel="noopener">rodrigonegrete.es</a><a href="https://db.rodrigonegrete.es" target="_blank" rel="noopener">db.rodrigonegrete.es</a></div>
+    <a class="logo" href="https://rodd.es" target="_blank" rel="noopener" style="justify-content:center;display:flex"><span class="logo-word">RODD<i>.</i></span><span class="logo-tag">Studio IA</span></a><p style="margin-top:8px">Un estudio de Rodrigo Negrete · UX/UI, IA y automatización</p>
+    <div class="pf"><a href="https://rodd.es" target="_blank" rel="noopener">rodd.es</a><a href="https://rodrigonegrete.es" target="_blank" rel="noopener">rodrigonegrete.es</a><a href="https://db.rodrigonegrete.es" target="_blank" rel="noopener">db.rodrigonegrete.es</a></div>
     <p>Barcelona · © 2026 · Precios orientativos sin IVA, sujetos a propuesta.</p>
   </div>
 </footer>
@@ -860,6 +908,7 @@ rocket:'<path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.
 check:'<path d="M20 6 9 17l-5-5"/>',
 chev:'<path d="m6 9 6 6 6-6"/>',
 arrow:'<path d="M5 12h14M12 5l7 7-7 7"/>',
+arrowUR:'<path d="M7 17 17 7M8 7h9v9"/>',
 x:'<path d="M18 6 6 18M6 6l12 12"/>',
 send:'<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>',
 volume:'<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',
@@ -907,9 +956,10 @@ const S=[
  {id:'wa',cat:'ia',icon:'msg',name:'Asistente WhatsApp + Agenda',tl:'Reserva citas, confirma y recuerda por WhatsApp sin tocar el móvil.',p:890,m:59,mk:[1500,3500],w:[2,2],tech:['WhatsApp API','Google Calendar','n8n'],inc:['Agenda conectada a Google/Outlook Calendar','Confirmaciones y recordatorios automáticos','Respuestas con IA a dudas frecuentes','Catálogo o carta dentro del chat','Etiquetado de clientes en CRM']},
  {id:'voice',cat:'ia',icon:'mic',name:'Agente de Voz 24/7',tl:'Una recepcionista que habla: atiende llamadas, reserva y deriva.',p:1290,m:89,mk:[3000,5000],w:[2,3],tech:['Vapi','ElevenLabs','Claude / GPT'],tag:'Lo nuevo',inc:['Voz natural en español (y otros idiomas)','Llamadas entrantes y salientes','Reservas y citas en tu calendario','Transferencia a una persona cuando hace falta','Resumen de cada llamada por email/CRM','Consumo por minuto aparte, a coste real'],demo:['Casa Trío · reserva por voz','https://casatrio.rodd.es']},
  {id:'agent',cat:'ia',icon:'cpu',name:'Agente Inteligente a medida',tl:'Agentes con memoria y herramientas para ventas, soporte u operaciones.',p:3490,m:149,mk:[5000,18000],w:[4,8],tech:['Claude Code','Agent SDK','n8n','Supabase'],inc:['Diseño del agente y sus herramientas','Conexión con tus sistemas y bases de datos','Supervisión humana y registros','Evaluación de calidad antes de lanzar','Mejora continua con métricas reales']},
- {id:'img',cat:'media',icon:'image',name:'Imágenes y carruseles IA',tl:'Pack de 10 piezas con tu marca: posts, carruseles y banners.',p:149,m:0,mk:[250,500],w:[1,1],tech:['Higgsfield','Figma','Canva'],unit:'/pack',inc:['10 diseños listos para publicar','Imágenes generadas con IA y retocadas','Copys y hashtags incluidos','Plantillas editables para ti','2 rondas de cambios']},
- {id:'reel',cat:'media',icon:'video',name:'Reels / TikTok en tendencia',tl:'Edición dinámica con subtítulos, ritmo y música con licencia.',p:79,m:0,mk:[150,300],w:[1,1],tech:['CapCut','Premiere','Descript'],unit:'/vídeo',tag:'Viral',inc:['Hasta 60 s editados en vertical','Subtítulos animados y efectos','Gancho en los 3 primeros segundos','Música con licencia comercial','Versión para Reels, TikTok y Shorts']},
- {id:'vidia',cat:'media',icon:'sparkles',name:'Vídeo creativo con IA',tl:'Spots y anuncios generados con IA y voz en off profesional.',p:149,m:0,mk:[300,1000],w:[1,1],tech:['Kling','Veo','Higgsfield','ElevenLabs'],unit:'/vídeo',inc:['Guion y storyboard','Escenas generadas con IA','Voz en off con ElevenLabs','Adaptación a formatos de anuncio','Derechos de uso comercial']},
+ {id:'img',cat:'media',icon:'image',name:'Imágenes y carruseles IA',tl:'Pack de 10 piezas con tu marca: posts, carruseles y banners.',p:190,m:0,mk:[300,600],w:[1,1],tech:['Higgsfield','Figma','Canva'],unit:'/pack',inc:['10 diseños listos para publicar','Imágenes generadas con IA y retocadas','Copys y hashtags incluidos','Plantillas editables para ti','2 rondas de cambios']},
+ {id:'reel',cat:'media',icon:'video',name:'Pack Reels mensual',tl:'4 reels al mes en tendencia: guion, grabación guiada y edición pro.',p:0,m:490,mk:[600,1200],w:[1,1],tech:['CapCut','Premiere','Descript'],unit:'/mes',tag:'Mejor valor',hot:1,inc:['4 vídeos verticales de hasta 60 s al mes','Guion y ganchos pensados para tu público','Te guiamos para grabar con el móvil (o usamos IA)','Subtítulos animados, ritmo y música con licencia','Versión para Reels, TikTok y Shorts','Reel suelto: desde 149 €']},
+ {id:'vidia',cat:'media',icon:'sparkles',name:'Vídeo creativo con IA',tl:'Un vídeo de producto o marca generado con IA, sin rodaje.',p:290,m:0,mk:[400,1200],w:[1,1],tech:['Kling','Veo','Higgsfield','ElevenLabs'],unit:'/vídeo',inc:['Hasta 60 s con escenas generadas con IA','Guion y storyboard aprobados por ti','Voz en off profesional (ElevenLabs)','Música con licencia comercial','2 rondas de cambios','Formatos 9:16 y 1:1']},
+ {id:'spot',cat:'media',icon:'rocket',name:'Spot publicitario premium',tl:'Anuncio de alto impacto para campañas, lanzamientos o TV online.',p:690,m:0,mk:[1200,3500],w:[1,2],tech:['Veo','Kling','Runway','ElevenLabs'],unit:'',tag:'Campañas',inc:['Concepto creativo y guion publicitario','Storyboard y dirección de arte','5–8 escenas con IA y personajes consistentes','Locución, música y diseño de sonido','Versiones 9:16, 1:1 y 16:9 + cortes de 6 s','Derechos de uso comercial y 3 rondas de cambios']},
  {id:'social',cat:'media',icon:'users',name:'Gestión de Redes',tl:'Calendario, diseño, publicación y comunidad cada mes.',p:0,m:290,mk:[300,700],w:[1,1],tech:['Instagram','TikTok','LinkedIn'],unit:'/mes',inc:['2 redes sociales','12 publicaciones + 4 reels al mes','Calendario editorial aprobado por ti','Respuestas a comentarios y mensajes','Informe mensual de resultados']},
  {id:'portal',cat:'crm',icon:'layout',name:'Portal / Dashboard / CRM',tl:'Clientes, citas, facturas y equipo en un panel hecho a tu medida.',p:2490,m:49,mk:[6000,15000],w:[4,6],tech:['React','Supabase','Firebase'],tag:'Control total',inc:['Base de datos y estructura a medida','Usuarios, roles y permisos','Clientes, presupuestos, facturas y tareas','Informes en tiempo real','Portal privado para tus clientes','Conectado con tus automatizaciones e IA'],demo:['Events Planner','https://events.rodd.es']},
  {id:'pwa',cat:'crm',icon:'box',name:'App Web / PWA',tl:'Se instala en el móvil, funciona sin conexión y envía avisos.',p:1990,m:29,mk:[5000,12000],w:[3,5],tech:['Next.js','Firebase','Stripe'],inc:['Instalable en iOS y Android sin tiendas','Modo sin conexión','Notificaciones push','Pagos y suscripciones con Stripe','Login seguro (email, Google, Apple)'],demo:['Kettelbro','https://kettellbro.vercel.app']}
@@ -942,7 +992,7 @@ function magnet(el){if(!fine||RM)return;el.addEventListener('pointermove',e=>{co
 /* ================= FONDO: RED NEURONAL ================= */
 const cv=$('#bg'),cx=cv.getContext('2d');let W,H,DPR,nodes=[],pulses=[],ptr={x:-999,y:-999,act:0};
 function sizeCv(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0);
-  const n=Math.round(Math.min(95,Math.max(38,W*H/16000)));nodes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6,h:Math.random()}));}
+  const n=Math.round(Math.min(60,Math.max(26,W*H/24000)));nodes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6,h:Math.random()}));}
 sizeCv();addEventListener('resize',sizeCv);
 addEventListener('pointermove',e=>{ptr.x=e.clientX;ptr.y=e.clientY;ptr.act=1},{passive:true});
 addEventListener('pointerdown',e=>{ptr.x=e.clientX;ptr.y=e.clientY;ptr.act=1;
@@ -960,11 +1010,11 @@ function frame(){
   scrollV*=.9;
   for(let i=0;i<nodes.length;i++){const a=nodes[i];
     for(let j=i+1;j<nodes.length;j++){const b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy;
-      if(d2<LINK*LINK){const o=1-Math.sqrt(d2)/LINK;cx.strokeStyle=`rgba(${a.h>.5?'34,211,238':'139,92,246'},${o*.26})`;cx.lineWidth=.7;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();
-        if(Math.random()<.0004&&pulses.length<14)pulses.push({a,b,t:0})}}
+      if(d2<LINK*LINK){const o=1-Math.sqrt(d2)/LINK;cx.strokeStyle=`rgba(${a.h>.5?'34,211,238':'139,92,246'},${o*.13})`;cx.lineWidth=.6;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();
+        if(Math.random()<.00025&&pulses.length<6)pulses.push({a,b,t:0})}}
     if(ptr.act){const d=Math.hypot(ptr.x-a.x,ptr.y-a.y);if(d<170){cx.strokeStyle=`rgba(198,255,61,${(1-d/170)*.45})`;cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(ptr.x,ptr.y);cx.stroke()}}
   }
-  for(const p of nodes){cx.fillStyle=p.h>.5?'rgba(34,211,238,.85)':'rgba(139,92,246,.9)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill()}
+  for(const p of nodes){cx.fillStyle=p.h>.5?'rgba(34,211,238,.5)':'rgba(139,92,246,.55)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill()}
   for(let i=pulses.length-1;i>=0;i--){const q=pulses[i];q.t+=.025;if(q.t>=1){pulses.splice(i,1);continue}
     const x=q.a.x+(q.b.x-q.a.x)*q.t,y=q.a.y+(q.b.y-q.a.y)*q.t;const g=cx.createRadialGradient(x,y,0,x,y,8);g.addColorStop(0,'rgba(255,255,255,.95)');g.addColorStop(.4,'rgba(198,255,61,.6)');g.addColorStop(1,'rgba(198,255,61,0)');cx.fillStyle=g;cx.beginPath();cx.arc(x,y,8,0,6.283);cx.fill()}
   if(ptr.act){const g=cx.createRadialGradient(ptr.x,ptr.y,0,ptr.x,ptr.y,120);g.addColorStop(0,'rgba(139,92,246,.12)');g.addColorStop(1,'rgba(139,92,246,0)');cx.fillStyle=g;cx.beginPath();cx.arc(ptr.x,ptr.y,120,0,6.283);cx.fill()}
@@ -1142,7 +1192,7 @@ const MT=[['Esencial',29,'Hosting gestionado, SSL, copias semanales, actualizaci
 $('#maint').innerHTML=MT.map(([n,v,d])=>`<div class="mt rv"><b>${n}</b><div class="val">${v} €<small>/mes</small></div><p>${d}</p></div>`).join('')+`<p class="note" style="grid-column:1/-1">Mercado: 49–150 €/mes por mantenimiento web. Sin permanencia: cancelas cuando quieras.</p>`;
 
 /* ================= MERCADO ================= */
-const MK=[['Landing page',500,1500,390],['Web corporativa',1000,3500,890],['Tienda online',1500,5000,1290],['Chatbot IA (instalación)',500,5000,490],['Pack de automatizaciones',2000,8000,1190],['Agente IA a medida',3000,18000,3490],['Gestión de redes / mes',300,700,290],['Mantenimiento web / mes',49,150,29]];
+const MK=[['Landing page',500,1500,390],['Web corporativa',1000,3500,890],['Tienda online',1500,5000,1290],['Chatbot IA (instalación)',500,5000,490],['Pack de automatizaciones',2000,8000,1190],['Agente IA a medida',3000,18000,3490],['Gestión de redes / mes',300,700,290],['Pack 4 reels / mes',600,1200,490],['Vídeo creativo con IA',400,1200,290],['Mantenimiento web / mes',49,150,29]];
 $('#mk').insertAdjacentHTML('beforeend',MK.map(([l,lo,hi,us])=>{const max=hi*1.08,pos=v=>Math.max(1.5,v/max*100);return `<div class="mk-row"><div class="lbl"><b>${l}</b><span>${eur(lo)}–${eur(hi)} · <b style="color:var(--a2)">${eur(us)}</b></span></div><div class="track"><span class="band" style="left:${pos(lo)}%;width:${pos(hi)-pos(lo)}%"></span><span class="us" style="left:${pos(us)}%"></span></div></div>`}).join(''));
 
 /* ================= CALCULADORA ================= */
@@ -1184,6 +1234,7 @@ function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;pr
   let cur='inicio';const mapSec={ecosistema:'inicio',servicios:'servicios',automatizamos:'servicios',sectores:'sectores',proyectos:'sectores',stack:'sectores',proceso:'sectores',garantias:'sectores',planes:'calculadora',mercado:'calculadora',calculadora:'calculadora',faq:'contacto',contacto:'contacto'};
   $$('main>section').forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4)cur=mapSec[s.id]||'inicio'});
   $$('#dock [data-go]').forEach(a=>a.classList.toggle('on',a.dataset.go===cur));
+  {let tc='';$$('main>section').forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4)tc=s.id});const m={servicios:'servicios',automatizamos:'servicios',sectores:'sectores',proyectos:'proyectos',stack:'proyectos',proceso:'proyectos',garantias:'proyectos',planes:'planes',mercado:'planes',calculadora:'calculadora'};$$('.top-links a').forEach(a=>a.classList.toggle('on',a.dataset.go===m[tc]))}
   {const cs=$('#calculadora').getBoundingClientRect(),sm=$('#summary').getBoundingClientRect();const show=innerWidth<900&&cart.size>0&&cs.top<innerHeight*.6&&cs.bottom>innerHeight*.4&&!(sm.top<innerHeight-60&&sm.bottom>80);$('#calcbar').classList.toggle('show',show);document.body.classList.toggle('bar-on',show)}
   const tl=$('#timeline');const r=tl.getBoundingClientRect();const k=Math.min(1,Math.max(0,(innerHeight*.7-r.top)/r.height));tl.querySelector('.fill').style.height=(k*100)+'%';
 }
@@ -1194,6 +1245,13 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 function observeAll(){$$('.rv,.rv-l,.rv-s,.mk,.acc,.tstep').forEach(el=>{if(!el.classList.contains('in'))io.observe(el)})}
 observeAll();let obsQ=0;new MutationObserver(()=>{if(obsQ)return;obsQ=1;setTimeout(()=>{obsQ=0;observeAll()},120)}).observe($('main'),{childList:true,subtree:true});
 $$('.btn').forEach(magnet);
+
+/* ================= MENÚ ================= */
+const burger=$('#burger');
+function setMenu(o){document.body.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
+burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+$('#menu').addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 
 /* ================= TOAST ================= */
 let tt;function toast(m){const t=$('#toast');t.querySelector('span').textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200)}
@@ -1225,7 +1283,7 @@ const INT=[
  {k:['automat','factura','correo','email','mail','proceso','n8n','make','excel','informe'],r:()=>['Automatizamos lo repetitivo:'+list(['flow','office','system'])+'Ejemplos: facturas que se envían solas, correos clasificados con IA, informes los lunes.',['Automatizar facturas','Plazos','Recomiéndame un plan']]},
  {k:['chatbot','bot','whatsapp','asistente'],r:()=>['Como yo, pero entrenado con tu negocio 😉'+list(['chatbot','wa'])+'Captan clientes, responden 24/7 y agendan citas.',['Agente de voz','Añadir chatbot al presupuesto','Hablar con Rodrigo']]},
  {k:['voz','llamada','telefono','recepcion','vapi','elevenlabs','hablar con ia'],r:()=>['Nuestro <b>Agente de Voz 24/7</b> atiende el teléfono, reserva y deriva a una persona. <b>Desde 1.290 € + 89 €/mes</b> (+ minutos a coste real). Puedes probar uno real en Casa Trío: <a class="cta-in" href="https://casatrio.rodd.es" target="_blank" rel="noopener">casatrio.rodd.es ↗</a><br>Activa el altavoz 🔊 arriba y te hablo yo también.',['Restaurante','Clínica / salud','Añadir voz al presupuesto']]},
- {k:['video','reel','tiktok','redes','instagram','carrusel','imagen','contenido','social'],r:()=>['Contenido que engancha:'+list(['reel','vidia','img','social']),['Recomiéndame un plan','Hablar con Rodrigo']]},
+ {k:['video','reel','tiktok','redes','instagram','carrusel','imagen','contenido','social'],r:()=>['Contenido que engancha:'+list(['reel','vidia','spot','img','social'])+'El pack mensual sale a unos 120 € por vídeo; un reel suelto, desde 149 €.',['Recomiéndame un plan','Hablar con Rodrigo']]},
  {k:['crm','portal','dashboard','panel','app','pwa','base de datos','supabase','firebase'],r:()=>['Sistemas para organizarte con control total:'+list(['portal','pwa'])+'Ejemplo real: <a class="cta-in" href="https://events.rodd.es" target="_blank" rel="noopener">events.rodd.es ↗</a>',['Plazos','Recomiéndame un plan']]},
  {k:['restaurante','cafeteria','hosteleria'],r:()=>sector('rest')},
  {k:['clinica','medic','dental','salud','fisio','veterin','consulta'],r:()=>sector('med')},
@@ -1236,7 +1294,7 @@ const INT=[
  {k:['mantenimiento','soporte','hosting'],r:()=>['Mantenimiento: <b>Esencial 29 €/mes</b>, <b>Pro 59 €/mes</b>, <b>Growth 129 €/mes</b>. Sin permanencia.',['Precios de webs','Recomiéndame un plan']]},
  {k:['iva','pago','plazos de pago','cuotas','financ'],r:()=>['Precios sin IVA (+21%). Pagas 50% al empezar y 50% al entregar, o en 3 cuotas desde 1.500 €.',['Recomiéndame un plan']]},
  {k:['legal','rgpd','seguridad','cookies','privacidad'],r:()=>['Todo sale con SSL, copias, aviso legal, privacidad, cookies y RGPD. En datos sanitarios alojamos en Europa.',['Hablar con Rodrigo']]},
- {k:['precio','cuanto','cuesta','presupuesto','tarifa','barato'],r:()=>['Algunos "desde":<ul><li>• Landing <b>390 €</b></li><li>• Web corporativa <b>890 €</b></li><li>• Chatbot IA <b>490 €</b></li><li>• Automatización <b>290 €</b></li><li>• Agente de voz <b>1.290 €</b></li><li>• Reels <b>79 €/vídeo</b></li></ul>¿Te armo un plan a medida?',['Recomiéndame un plan','Abrir calculadora']]},
+ {k:['precio','cuanto','cuesta','presupuesto','tarifa','barato'],r:()=>['Algunos "desde":<ul><li>• Landing <b>390 €</b></li><li>• Web corporativa <b>890 €</b></li><li>• Chatbot IA <b>490 €</b></li><li>• Automatización <b>290 €</b></li><li>• Agente de voz <b>1.290 €</b></li><li>• Pack 4 reels <b>490 €/mes</b></li></ul>¿Te armo un plan a medida?',['Recomiéndame un plan','Abrir calculadora']]},
  {k:['calculadora','abrir calculadora'],r:()=>{closeChat();setTimeout(()=>go('calculadora'),300);return ['Te llevo a la calculadora 👇',QR]}},
  {k:['agendar reunion','rodrigo','humano','persona','contacto','agendar','llamar','whatsapp con'],r:()=>['¡Claro! Escríbele directamente: <a class="cta-in" href="https://wa.me/34653567610?text=Hola%20Rodrigo%2C%20vengo%20de%20futuroproyecto%20y%20quiero%20una%20reuni%C3%B3n" target="_blank" rel="noopener">WhatsApp +34 653 567 610 ↗</a><br>o al correo rodrigo.negrete.aros@gmail.com. Primera reunión gratis.',QR]},
  {k:['gracias','genial','perfecto','vale'],r:()=>['¡A ti! Si quieres, te dejo todo en la calculadora para enviarlo por WhatsApp.',['Abrir calculadora','Hablar con Rodrigo']]}
