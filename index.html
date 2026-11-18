@@ -110,18 +110,54 @@ body.cur-down #cur-r{width:28px;height:28px;margin:-14px 0 0 -14px}
 .menu-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
 .menu-open .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
 @media(min-width:900px){.burger{display:none}}
-.menu{position:fixed;inset:0;z-index:94;background:radial-gradient(80% 60% at 100% 0%,rgba(139,92,246,.18),transparent 60%),#07070A;display:flex;flex-direction:column;justify-content:space-between;padding:calc(92px + var(--sat)) 24px calc(30px + var(--sab));clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .7s var(--ease);visibility:hidden}
-.menu-open .menu{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible}
-.menu nav{display:grid;gap:4px}
-.menu nav a{display:flex;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-family:var(--fd);font-weight:700;font-size:clamp(30px,8.5vw,44px);letter-spacing:-.03em;line-height:1.1;opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .6s var(--ease),color .25s}
-.menu nav a small{font-family:var(--fm);font-size:11px;color:var(--brand2);font-weight:500;letter-spacing:.05em;min-width:22px}
-.menu nav a:hover{color:var(--brand2)}
-.menu-open .menu nav a{opacity:1;transform:none}
-.menu-foot{display:grid;gap:12px;opacity:0;transition:opacity .5s .45s}
-.menu-open .menu-foot{opacity:1}
+.menu-layer{position:fixed;inset:0;z-index:93;background:linear-gradient(135deg,#8B5CF6,#22D3EE);clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .6s cubic-bezier(.76,0,.24,1);pointer-events:none}
+.menu-layer.l2{background:linear-gradient(135deg,#C6FF3D,#22D3EE);z-index:92;transition-duration:.55s}
+.menu-open .menu-layer{clip-path:circle(150% at calc(100% - 40px) 40px)}
+.menu-open .menu-layer.l2{transition-delay:0s}.menu-open .menu-layer:not(.l2){transition-delay:.06s}
+.menu-closing .menu-layer:not(.l2){transition-delay:.12s}.menu-closing .menu-layer.l2{transition-delay:.2s}
+.menu{position:fixed;inset:0;z-index:94;background:radial-gradient(70% 50% at 100% 0%,rgba(139,92,246,.22),transparent 60%),radial-gradient(60% 40% at 0% 100%,rgba(34,211,238,.10),transparent 60%),#07070A;display:flex;flex-direction:column;justify-content:space-between;padding:calc(96px + var(--sat)) 24px calc(28px + var(--sab));clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .7s cubic-bezier(.76,0,.24,1);visibility:hidden;overflow:hidden}
+.menu-open .menu{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible;transition-delay:.14s}
+.menu-closing .menu{transition-delay:0s;transition-duration:.55s}
+.menu .wm{position:absolute;left:0;bottom:-.12em;font-family:var(--fd);font-weight:800;font-size:46vw;letter-spacing:-.06em;line-height:1;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.06);pointer-events:none;animation:wm 18s linear infinite}
+@keyframes wm{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.menu-kicker{font-family:var(--fm);font-size:11px;letter-spacing:.14em;color:var(--t3);text-transform:uppercase;margin-bottom:10px;opacity:0;transform:translateY(10px);transition:all .5s var(--ease) .35s}
+.menu-open .menu-kicker{opacity:1;transform:none}
+.menu nav{display:grid;position:relative}
+.menu nav a{position:relative;display:flex;align-items:center;gap:14px;padding:8px 0 10px;font-family:var(--fd);font-weight:800;font-size:clamp(30px,9vw,58px);letter-spacing:-.04em;line-height:1.02;color:#fff}
+.menu nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,.04));transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease) calc(var(--li)*.06s + .3s)}
+.menu-open .menu nav a::after{transform:scaleX(1)}
+.menu nav a small{font-family:var(--fm);font-size:11px;color:var(--brand2);font-weight:500;letter-spacing:.05em;min-width:24px;align-self:flex-start;margin-top:.7em;opacity:0;transition:opacity .4s calc(var(--li)*.06s + .45s)}
+.menu-open .menu nav a small{opacity:1}
+.menu nav .lbl{display:inline-flex;overflow:hidden;padding:.06em .05em .1em 0;margin:-.06em 0 -.1em}
+.ch{display:inline-block;transform:translateY(118%) rotate(10deg);transform-origin:left bottom;transition:transform .75s var(--ease) calc(var(--li)*.065s + var(--i)*.022s + .28s),color .35s}
+.menu-open .ch{transform:none}
+.menu-open.menu-closing .ch{transform:translateY(-118%) rotate(-6deg);transition:transform .38s cubic-bezier(.7,0,.84,0) calc(var(--li)*.025s + var(--i)*.008s)}
+.menu nav a:hover .ch,.menu nav a:focus-visible .ch,.menu nav a.tapped .ch{animation:grow .7s var(--spring) calc(var(--i)*.035s) both;color:var(--brand2)}
+@keyframes grow{0%{transform:none}40%{transform:translateY(-14%) scale(1.22);color:#C6FF3D}100%{transform:none}}
+.menu nav a.on .lbl{background:linear-gradient(100deg,#C4B5FD,#8B5CF6 40%,#22D3EE);-webkit-background-clip:text;background-clip:text}
+.menu nav a.on .ch{color:transparent}
+.menu nav .go{margin-left:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;opacity:0;transform:scale(.4) rotate(-45deg);transition:all .5s var(--spring)}
+.menu nav .go svg{width:18px;height:18px}
+.menu nav a:hover .go,.menu nav a.on .go,.menu nav a.tapped .go{opacity:1;transform:none;background:#fff;color:#0A0A0D;border-color:#fff}
+.menu-foot{display:grid;gap:12px;position:relative}
+.menu-foot>*{opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.menu-open .menu-foot>*{opacity:1;transform:none}
+.menu-open .menu-foot>*:nth-child(1){transition-delay:.62s}.menu-open .menu-foot>*:nth-child(2){transition-delay:.7s}.menu-open .menu-foot>*:nth-child(3){transition-delay:.78s}
+.menu-closing .menu-foot>*{opacity:0!important;transition-delay:0s!important}
 .menu-foot .row{display:flex;gap:8px;flex-wrap:wrap}
-.menu-foot .row a{padding:10px 14px;border-radius:var(--rb);border:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--t2)}
+.menu-foot .row a{padding:10px 14px;border-radius:var(--rb);border:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--t2);transition:all .3s}
+.menu-foot .row a:hover{border-color:var(--brand2);color:#fff}
 .menu-foot p{font-size:12px;color:var(--t3)}
+.menu-open .burger{background:#fff;border-color:#fff;transform:rotate(180deg)}
+.burger{transition:background .4s,border-color .4s,transform .6s var(--spring)}
+.menu-open .burger span{background:#0A0A0D}
+/* hover tipo "roll" en el menú de escritorio */
+.top-links a{overflow:hidden;line-height:1.4;height:1.4em;padding:0}
+.top-links a.on .roll{color:#fff}
+.roll{display:inline-block;position:relative;transition:transform .5s var(--ease)}
+.roll::after{content:attr(data-t);position:absolute;left:0;top:100%;color:#fff;background:linear-gradient(100deg,#C4B5FD,#22D3EE);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.top-links a:hover .roll{transform:translateY(-100%)}
+.top-links a::after{display:none}
 body.menu-open{overflow:hidden}
 
 /* ---------- botones ---------- */
@@ -612,22 +648,27 @@ footer .pf a:hover{background:var(--accent);color:#06070B}
 
 <header class="top" id="top">
   <a href="#inicio" class="logo" data-go="inicio" aria-label="RODD. Studio, inicio"><span class="logo-word">RODD<i>.</i></span><span class="logo-tag">Studio IA</span></a>
-  <nav class="top-links" aria-label="Principal"><a href="#servicios" data-go="servicios">Servicios</a><a href="#sectores" data-go="sectores">Casos</a><a href="#proyectos" data-go="proyectos">Proyectos</a><a href="#planes" data-go="planes">Planes</a><a href="#calculadora" data-go="calculadora">Presupuesto</a></nav>
+  <nav class="top-links" aria-label="Principal"><a href="#servicios" data-go="servicios"><span class="roll" data-t="Servicios">Servicios</span></a><a href="#sectores" data-go="sectores"><span class="roll" data-t="Casos">Casos</span></a><a href="#proyectos" data-go="proyectos"><span class="roll" data-t="Proyectos">Proyectos</span></a><a href="#planes" data-go="planes"><span class="roll" data-t="Planes">Planes</span></a><a href="#calculadora" data-go="calculadora"><span class="roll" data-t="Presupuesto">Presupuesto</span></a></nav>
   <div class="top-right">
     <a class="talk" href="#contacto" data-go="contacto">Hablemos<span class="talk-ic"><svg data-i="arrowUR"></svg></span></a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
+<div class="menu-layer l2" aria-hidden="true"></div><div class="menu-layer" aria-hidden="true"></div>
 <div class="menu" id="menu">
+  <span class="wm" aria-hidden="true">RODD. RODD. RODD.</span>
+  <div>
+  <div class="menu-kicker">Menú · RODD. Studio</div>
   <nav aria-label="Menú móvil">
-    <a href="#servicios" data-go="servicios" style="transition-delay:.12s"><small>01</small>Servicios</a>
-    <a href="#automatizamos" data-go="automatizamos" style="transition-delay:.16s"><small>02</small>Qué automatizamos</a>
-    <a href="#sectores" data-go="sectores" style="transition-delay:.20s"><small>03</small>Casos por sector</a>
-    <a href="#proyectos" data-go="proyectos" style="transition-delay:.24s"><small>04</small>Proyectos</a>
-    <a href="#proceso" data-go="proceso" style="transition-delay:.28s"><small>05</small>Cómo trabajamos</a>
-    <a href="#planes" data-go="planes" style="transition-delay:.32s"><small>06</small>Planes</a>
-    <a href="#calculadora" data-go="calculadora" style="transition-delay:.36s"><small>07</small>Presupuesto</a>
+    <a href="#servicios" data-go="servicios"><small>01</small><span class="lbl">Servicios</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
+    <a href="#automatizamos" data-go="automatizamos"><small>02</small><span class="lbl">Automatizamos</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
+    <a href="#sectores" data-go="sectores"><small>03</small><span class="lbl">Casos reales</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
+    <a href="#proyectos" data-go="proyectos"><small>04</small><span class="lbl">Proyectos</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
+    <a href="#proceso" data-go="proceso"><small>05</small><span class="lbl">Cómo trabajamos</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
+    <a href="#planes" data-go="planes"><small>06</small><span class="lbl">Planes</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
+    <a href="#calculadora" data-go="calculadora"><small>07</small><span class="lbl">Presupuesto</span><span class="go"><svg data-i="arrowUR"></svg></span></a>
   </nav>
+  </div>
   <div class="menu-foot">
     <a class="btn btn-shine btn-block" href="https://wa.me/34653567610?text=Hola%20Rodrigo%2C%20vengo%20de%20futuroproyecto.rodrigonegrete.es%20y%20quiero%20agendar%20una%20reuni%C3%B3n." target="_blank" rel="noopener"><svg data-i="msg"></svg>Reunión gratis por WhatsApp</a>
     <div class="row"><a href="https://rodd.es" target="_blank" rel="noopener">rodd.es ↗</a><a href="https://rodrigonegrete.es" target="_blank" rel="noopener">rodrigonegrete.es ↗</a><a href="https://db.rodrigonegrete.es" target="_blank" rel="noopener">db.rodrigonegrete.es ↗</a></div>
@@ -1248,9 +1289,17 @@ $$('.btn').forEach(magnet);
 
 /* ================= MENÚ ================= */
 const burger=$('#burger');
-function setMenu(o){document.body.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
-burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
-$('#menu').addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+$$('#menu nav a').forEach((a,li)=>{a.style.setProperty('--li',li);const l=a.querySelector('.lbl');l.innerHTML=[...l.textContent].map((c,i)=>`<span class="ch" style="--i:${i}">${c===' '?'&nbsp;':c}</span>`).join('')});
+let menuT;
+function setMenu(o){clearTimeout(menuT);const b=document.body;
+  if(o){b.classList.remove('menu-closing');b.classList.add('menu-open');
+    const cur=[...$$('main>section')].filter(s=>s.getBoundingClientRect().top<innerHeight*.4).pop();
+    $$('#menu nav a').forEach(a=>a.classList.toggle('on',!!cur&&a.dataset.go===cur.id));}
+  else if(b.classList.contains('menu-open')){b.classList.add('menu-closing');menuT=setTimeout(()=>{b.classList.remove('menu-open','menu-closing')},560)}
+  burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
+burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')||document.body.classList.contains('menu-closing')));
+$('#menu').addEventListener('pointerdown',e=>{const a=e.target.closest('nav a');if(a){a.classList.remove('tapped');void a.offsetWidth;a.classList.add('tapped')}});
+$('#menu').addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;if(a.matches('nav a')){e.preventDefault();e.stopPropagation();const id=a.dataset.go;setTimeout(()=>{setMenu(false);setTimeout(()=>go(id),180)},380)}else setMenu(false)});
 addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 
 /* ================= TOAST ================= */
