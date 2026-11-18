@@ -269,6 +269,58 @@ main{max-width:1100px;margin:0 auto;padding:16px 16px calc(110px + var(--sab));o
 .grid2{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
 @media(min-width:900px){.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .menu-list{display:grid;gap:8px}
+/* ====== diseño por sección ====== */
+main[data-v=home]{--vc:#8B5CF6}main[data-v=clients],main[data-v=client]{--vc:#22D3EE}main[data-v=projects],main[data-v=project]{--vc:#5B8CFF}main[data-v=payments]{--vc:#C6FF3D}main[data-v=pipeline]{--vc:#FFB547}main[data-v=more]{--vc:#A6ABBD}
+.vhero{position:relative;text-align:center;padding:26px 18px 20px;border-radius:28px;margin:4px 0 18px;overflow:hidden;
+  background:radial-gradient(120% 85% at 50% 0%,color-mix(in srgb,var(--vc) 26%,transparent),transparent 68%),linear-gradient(180deg,#141622,#0E1018);border:1px solid color-mix(in srgb,var(--vc) 32%,transparent)}
+.vhero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:16px 16px;-webkit-mask:radial-gradient(70% 60% at 50% 0%,#000,transparent 75%);mask:radial-gradient(70% 60% at 50% 0%,#000,transparent 75%);pointer-events:none}
+.vhero>*{position:relative}
+.vh-ic{width:56px;height:56px;margin:0 auto 12px;border-radius:18px;display:grid;place-items:center;background:color-mix(in srgb,var(--vc) 16%,#0E1018);color:var(--vc);border:1px solid color-mix(in srgb,var(--vc) 40%,transparent);box-shadow:0 0 34px -6px color-mix(in srgb,var(--vc) 60%,transparent)}
+.vh-ic svg{width:26px;height:26px}
+.vhero h2{font-size:26px;font-weight:800;line-height:1.1}
+.vhero p{font-size:13.5px;color:var(--t2);margin-top:4px}
+.vh-big{font-family:var(--fd);font-weight:800;font-size:clamp(40px,12vw,56px);letter-spacing:-.04em;line-height:1;margin:16px 0 4px;color:var(--t1)}
+.vh-big.c{color:var(--vc)}
+.vh-lbl{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+.vh-stats{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;margin:18px -6px 0;border-top:1px solid var(--line);padding-top:14px}
+.vh-stats div{padding:0 6px}
+.vh-stats div+div{border-left:1px solid var(--line)}
+.vh-stats b{display:block;font-family:var(--fd);font-size:19px;font-weight:800;letter-spacing:-.02em}
+.vh-stats span{font-size:11.5px;color:var(--t3);font-weight:600}
+.vh-act{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.vh-act .btn{min-width:150px}
+.b-vc{background:var(--vc);color:#07070A;box-shadow:0 10px 26px -12px var(--vc)}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:6px}
+@media(min-width:760px){.qgrid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.qt{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 6px 14px;border-radius:20px;background:var(--surf);border:1px solid var(--line);text-align:center;transition:transform .3s var(--spring),border-color .25s,background .25s}
+.qt:active{transform:scale(.94)}
+.qt:hover{border-color:color-mix(in srgb,var(--qc) 50%,transparent);background:color-mix(in srgb,var(--qc) 7%,var(--surf))}
+.qt .qi{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--qc) 16%,transparent);color:var(--qc)}
+.qt .qi svg{width:22px;height:22px}
+.qt b{font-size:13px;font-weight:800;line-height:1.15}
+.qt small{font-size:11px;color:var(--t3);font-weight:600;margin-top:-4px}
+.qt .qn{position:absolute;top:8px;right:8px;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--qc);color:#07070A;font-size:11px;font-weight:800;display:grid;place-items:center}
+.grp{display:flex;align-items:center;gap:10px;margin:20px 0 9px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gc,var(--t3))}
+.grp::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gc,var(--t3));box-shadow:0 0 10px var(--gc,transparent)}
+.grp::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+.grp em{font-style:normal;color:var(--t3);font-weight:700;letter-spacing:0}
+.grp:first-of-type{margin-top:4px}
+.kpi{text-align:center;padding:16px 12px}
+.kpi span{justify-content:center}
+.kpi b{font-size:24px}
+.stats3 div{text-align:center}
+.sec-t{justify-content:center;gap:10px;position:relative}
+.sec-t::before,.sec-t::after{content:"";flex:1;height:1px;background:var(--line)}
+.sec-t>button,.sec-t>a{position:absolute;right:0;background:var(--bg);padding-left:8px}
+.sec-t>span{position:absolute;left:0;background:var(--bg);padding-right:8px}
+.dhc{text-align:center;position:relative;margin-bottom:14px}
+.dhc .av{width:72px;height:72px;border-radius:24px;font-size:24px;margin:0 auto 10px;box-shadow:0 0 40px -8px currentColor}
+.dhc h3{font-size:24px;line-height:1.1}
+.dhc p{font-size:13.5px;color:var(--t2);margin-top:3px}
+.dhc .ib{position:absolute;right:0;top:0}
+.dhc .tagrow{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.it .end{min-width:88px}
+.empty{background:var(--surf)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -299,7 +351,7 @@ main{max-width:1100px;margin:0 auto;padding:16px 16px calc(110px + var(--sab));o
     <button class="ib" id="refresh" aria-label="Sincronizar"><svg data-i="refresh"></svg></button>
     <button class="ib" data-go="more" aria-label="Ajustes"><svg data-i="settings"></svg></button>
   </header>
-  <main id="view"></main>
+  <main id="view" data-v="home"></main>
   <nav class="tabbar" id="tabbar">
     <button data-go="home" class="on"><svg data-i="home"></svg>Inicio</button>
     <button data-go="clients"><svg data-i="users"></svg>Clientes</button>
@@ -422,11 +474,15 @@ $('#refresh').onclick=()=>{const b=$('#refresh');b.classList.add('spin');load().
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&S.token)load(true)});
 
 function render(){
-  const v=$('#view');const fn={home:vHome,clients:vClients,projects:vProjects,payments:vPayments,pipeline:vPipeline,more:vMore,client:vClient,project:vProject}[S.view]||vHome;
+  const v=$('#view');v.dataset.v=S.view;const fn={home:vHome,clients:vClients,projects:vProjects,payments:vPayments,pipeline:vPipeline,more:vMore,client:vClient,project:vProject}[S.view]||vHome;
   v.innerHTML=`<div class="fade">${fn(S.arg)}</div>`;
   const ov=S.d.payments.filter(p=>payState(p)==='vencido').length;const b=$('#payBadge');b.textContent=ov;b.classList.toggle('hide',!ov);
   if(S.view==='clients'){const q=$('#q');if(q){q.value=S.f.q;q.oninput=()=>{S.f.q=q.value;renderList()};}}
 }
+
+/* ---------- cabeceras por sección ---------- */
+function hero({icon,title,sub,big,bigC,lbl,stats=[],act=''}){return `<section class="vhero"><div class="vh-ic">${svg(icon)}</div><h2>${title}</h2>${sub?`<p>${sub}</p>`:''}${big!=null?`<div class="vh-big num ${bigC?'c':''}">${big}</div><div class="vh-lbl">${lbl||''}</div>`:''}${stats.length?`<div class="vh-stats">${stats.map(([b,l,c])=>`<div><b class="num"${c?` style="color:${c}"`:''}>${b}</b><span>${l}</span></div>`).join('')}</div>`:''}${act?`<div class="vh-act">${act}</div>`:''}</section>`}
+const grp=(label,n,c)=>`<div class="grp" style="--gc:${c||'var(--t3)'}">${label}${n!=null?` <em>${n}</em>`:''}</div>`;
 
 /* ---------- INICIO ---------- */
 function vHome(){
@@ -446,16 +502,26 @@ function vHome(){
   S.d.projects.filter(p=>p.due_date&&!['entregado','cancelado'].includes(p.status)&&diffDays(p.due_date,t)<=10).sort((a,b)=>a.due_date.localeCompare(b.due_date)).forEach(p=>ag.push({html:itProj(p)}));
   S.d.clients.filter(c=>c.next_action&&c.next_action_date&&c.next_action_date<=addDays(t,1)).forEach(c=>ag.push({html:`<button class="it" data-open-client="${c.id}"><span class="ic-dot" style="color:var(--lime)">${svg('bulb')}</span><span class="mid"><b>${esc(c.next_action)}</b><span>${esc(c.name)}${c.company?' · '+esc(c.company):''}</span></span><span class="end"><span class="${c.next_action_date<t?'due-late':'due-soon'}">${c.next_action_date<t?'Atrasado':c.next_action_date===t?'Hoy':'Mañana'}</span></span></button>`}));
   const counts=PIPE.map(s=>[s,S.d.clients.filter(c=>c.status===s).length]);const maxc=Math.max(1,...counts.map(x=>x[1]));
-  return `<div class="vh"><h2>${hi}, ${esc(CFG.name)}<small>${new Date().toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'})}</small></h2></div>
+  const nCli=S.d.clients.length,nLead=S.d.clients.filter(c=>['lead','contactado','propuesta','negociacion'].includes(c.status)).length;
+  return `${hero({icon:'spark',title:`${hi}, ${esc(CFG.name)}`,sub:new Date().toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'}),big:money(cobradoMes),bigC:1,lbl:'Cobrado este mes',stats:[[money(pend),'Por cobrar','var(--amber)'],[money(ovSum),'Vencido',ovSum?'var(--red)':''],[money(mrr),'Fijo / mes','var(--cyan)']]})}
+  <div class="qgrid">
+    <button class="qt" style="--qc:#22D3EE" data-go="clients"><span class="qi">${svg('users')}</span><b>Clientes</b><small>${nCli} en total</small></button>
+    <button class="qt" style="--qc:#5B8CFF" data-go="projects"><span class="qi">${svg('box')}</span><b>Proyectos</b><small>${actP.length} en curso</small></button>
+    <button class="qt" style="--qc:#C6FF3D" data-go="payments"><span class="qi">${svg('euro')}</span><b>Cobros</b><small>${open.length} abiertos</small>${ov.length?`<span class="qn" style="background:var(--red);color:#fff">${ov.length}</span>`:''}</button>
+    <button class="qt" style="--qc:#FFB547" data-go="pipeline"><span class="qi">${svg('kanban')}</span><b>Embudo</b><small>${nLead} oportunidades</small></button>
+    <button class="qt" style="--qc:#8B5CF6" data-new="client"><span class="qi">${svg('plus')}</span><b>Nuevo cliente</b><small>o lead</small></button>
+    <button class="qt" style="--qc:#FF8A4C" data-new="payment"><span class="qi">${svg('check')}</span><b>Registrar cobro</b><small>o pago pendiente</small></button>
+  </div>
+  <div class="sec-t">Resumen</div>
   <div class="kpis">
     <div class="kpi hl" style="--c:var(--lime)"><span><i></i>Cobrado este mes</span><b class="num">${money(cobradoMes)}</b><small>${pays.filter(p=>p.status==='pagado'&&(p.paid_at||'').startsWith(m)).length} pagos recibidos</small></div>
     <div class="kpi" style="--c:var(--amber)"><span><i></i>Pendiente de cobro</span><b class="num">${money(pend)}</b><small>${open.length} pagos abiertos</small></div>
     <div class="kpi" style="--c:var(--red)"><span><i></i>Vencido</span><b class="num" style="color:${ovSum?'var(--red)':'inherit'}">${money(ovSum)}</b><small>${ov.length} por reclamar</small></div>
     <div class="kpi" style="--c:var(--cyan)"><span><i></i>Recurrente / mes</span><b class="num">${money(mrr)}</b><small>${money(mrr*12)} al año</small></div>
-    <div class="kpi" style="--c:var(--violet)"><span><i></i>En el embudo</span><b class="num">${money(pipeVal)}</b><small>${S.d.clients.filter(c=>['lead','contactado','propuesta','negociacion'].includes(c.status)).length} oportunidades</small></div>
+    <div class="kpi" style="--c:var(--violet)"><span><i></i>En el embudo</span><b class="num">${money(pipeVal)}</b><small>${nLead} oportunidades</small></div>
     <div class="kpi" style="--c:var(--blue)"><span><i></i>Proyectos activos</span><b class="num">${actP.length}</b><small>${S.d.clients.filter(c=>c.status==='activo').length} clientes activos</small></div>
   </div>
-  <div class="sec-t">Hoy toca <span>${ag.length||''}</span></div>
+  <div class="sec-t">Hoy toca${ag.length?` · ${ag.length}`:''}</div>
   ${ag.length?`<div class="list">${ag.slice(0,12).map(a=>a.html).join('')}</div>`:`<div class="empty"><b>Todo al día ✨</b>No hay cobros vencidos, entregas cercanas ni tareas para hoy.</div>`}
   <div class="grid2">
     <div><div class="sec-t">Ingresos · últimos 6 meses</div><div class="card">${chart()}<div class="legend"><span><i style="background:var(--lime)"></i>Cobrado</span><span><i style="background:rgba(255,181,71,.6)"></i>Pendiente</span></div></div></div>
@@ -500,16 +566,20 @@ function itProj(p){const c=C(p.client_id);const d=p.due_date?diffDays(p.due_date
 /* ---------- CLIENTES ---------- */
 function vClients(){
   const n=s=>S.d.clients.filter(c=>s==='all'||c.status===s).length;
-  return `<div class="vh"><h2>Clientes<small>${S.d.clients.length} en total</small></h2><button class="btn b-main b-sm" data-new="client">${svg('plus')}Nuevo</button></div>
+  const act=S.d.clients.filter(c=>c.status==='activo').length,opp=S.d.clients.filter(c=>['lead','contactado','propuesta','negociacion'].includes(c.status)).length;
+  const owe=S.d.clients.filter(c=>clientStats(c.id).open>0).length;
+  return `${hero({icon:'users',title:'Clientes',sub:'Tu cartera, ordenada por etapa',big:S.d.clients.length,lbl:S.d.clients.length===1?'cliente':'clientes',stats:[[act,'Activos','var(--lime)'],[opp,'Oportunidades','var(--violet)'],[owe,'Con pagos pendientes','var(--amber)']],act:`<button class="btn b-vc" data-new="client">${svg('plus')}Nuevo cliente</button>`})}
   <div class="search">${svg('search')}<input id="q" placeholder="Buscar nombre, empresa, teléfono, etiqueta…" autocomplete="off"></div>
   <div class="chips">${[['all','Todos'],...Object.entries(CST).map(([k,v])=>[k,v[0]])].map(([k,l])=>`<button class="chip ${S.f.cst===k?'on':''}" data-cst="${k}">${l}<em>${n(k)}</em></button>`).join('')}</div>
-  <div class="list" id="clist">${clientRows()}</div>`;
+  <div id="clist">${clientRows()}</div>`;
 }
+function clientRow(c){const st=clientStats(c.id);return `<button class="it" data-open-client="${c.id}"><span class="av" style="background:${avColor(c.name)}">${esc(initials(c.name))}</span><span class="mid"><b>${esc(c.name)}</b><span>${esc([c.company,c.business_type].filter(Boolean).join(' · ')||c.email||c.phone||'Sin datos de contacto')}</span></span><span class="end">${st.open?`<b class="num ${st.overdueN?'due-late':''}" style="font-size:14px">${money(st.open)}</b><span>${st.overdueN?'vencido':'pendiente'}</span>`:c.estimated_value?`<b class="num" style="font-size:14px">${money(c.estimated_value)}</b><span>estimado</span>`:`<span>${c.next_action_date?fdate(c.next_action_date):''}</span>`}</span></button>`}
 function clientRows(){
   const q=(S.f.q||'').toLowerCase().trim();
   const rows=S.d.clients.filter(c=>(S.f.cst==='all'||c.status===S.f.cst)&&(!q||[c.name,c.company,c.email,c.phone,c.business_type,c.city,(c.tags||[]).join(' ')].join(' ').toLowerCase().includes(q)));
   if(!rows.length)return `<div class="empty"><b>${S.d.clients.length?'Sin resultados':'Aún no hay clientes'}</b>${S.d.clients.length?'Prueba con otra búsqueda o filtro.':'Crea tu primer cliente y empieza a organizar tu negocio.'}${S.d.clients.length?'':`<br><button class="btn b-main" data-new="client">${svg('plus')}Crear cliente</button>`}</div>`;
-  return rows.map(c=>{const st=clientStats(c.id);return `<button class="it" data-open-client="${c.id}"><span class="av" style="background:${avColor(c.name)}">${esc(initials(c.name))}</span><span class="mid"><b>${esc(c.name)}</b><span>${esc([c.company,c.business_type].filter(Boolean).join(' · ')||c.email||c.phone||'Sin datos de contacto')}</span></span><span class="end">${pill(CST[c.status])}<span style="display:block;margin-top:4px">${st.open?`<span class="${st.overdueN?'due-late':''}">${money(st.open)} pend.</span>`:c.estimated_value?money(c.estimated_value)+' est.':''}</span></span></button>`}).join('');
+  const order=['activo','negociacion','propuesta','contactado','lead','pausado','finalizado','perdido'];
+  return order.map(k=>{const g=rows.filter(c=>c.status===k);return g.length?grp(CST[k][0],g.length,CST[k][1])+`<div class="list">${g.map(clientRow).join('')}</div>`:''}).join('');
 }
 function renderList(){const l=$('#clist');if(l)l.innerHTML=clientRows()}
 document.addEventListener('click',e=>{const c=e.target.closest('[data-cst]');if(c){S.f.cst=c.dataset.cst;render()}});
@@ -519,8 +589,8 @@ function vClient(id){
   const st=clientStats(id);const ps=S.d.projects.filter(p=>p.client_id===id);const pays=S.d.payments.filter(p=>p.client_id===id).sort((a,b)=>(a.status==='pagado')-(b.status==='pagado')||String(a.due_date).localeCompare(String(b.due_date)));const acts=S.d.activities.filter(a=>a.client_id===id);
   const tel=(c.phone||'').replace(/[^\d+]/g,'');const wa=tel.replace(/^\+/,'').replace(/^(\d{9})$/,'34$1');
   return `<button class="btn b-soft b-sm" data-go="clients" style="margin-bottom:12px">${svg('arrowL')}Clientes</button>
-  <div class="dh"><span class="av" style="background:${avColor(c.name)}">${esc(initials(c.name))}</span><div style="flex:1;min-width:0"><h3>${esc(c.name)}</h3><p>${esc([c.company,c.business_type,c.city].filter(Boolean).join(' · '))||'—'}</p></div><button class="ib" data-edit-client="${id}" aria-label="Editar">${svg('edit')}</button></div>
-  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><select class="chip" data-status-client="${id}" style="background:var(--surf);color:${CST[c.status][1]};border-color:${CST[c.status][1]}55">${Object.entries(CST).map(([k,v])=>`<option value="${k}" ${k===c.status?'selected':''}>${v[0]}</option>`).join('')}</select>${pill(SCORE[st.score])}${c.priority==='alta'?pill(['Prioridad alta','#FF5C7A']):''}${(c.tags||[]).map(t=>`<span class="pill" style="--c:#A6ABBD">${esc(t)}</span>`).join('')}</div>
+  <div class="dhc"><span class="av" style="background:${avColor(c.name)};color:#07070A">${esc(initials(c.name))}</span><h3>${esc(c.name)}</h3><p>${esc([c.company,c.business_type,c.city].filter(Boolean).join(' · '))||'—'}</p><button class="ib" data-edit-client="${id}" aria-label="Editar">${svg('edit')}</button>
+  <div class="tagrow"><select class="chip" data-status-client="${id}" style="background:var(--surf);color:${CST[c.status][1]};border-color:${CST[c.status][1]}55">${Object.entries(CST).map(([k,v])=>`<option value="${k}" ${k===c.status?'selected':''}>${v[0]}</option>`).join('')}</select>${pill(SCORE[st.score])}${c.priority==='alta'?pill(['Prioridad alta','#FF5C7A']):''}${(c.tags||[]).map(t=>`<span class="pill" style="--c:#A6ABBD">${esc(t)}</span>`).join('')}</div></div>
   <div class="qa"><a class="${tel?'':'off'}" href="tel:${esc(tel)}">${svg('phone')}Llamar</a><a class="${wa?'':'off'}" href="https://wa.me/${esc(wa)}" target="_blank" rel="noopener" data-log="${id}|whatsapp|WhatsApp abierto">${svg('msg')}WhatsApp</a><a class="${c.email?'':'off'}" href="mailto:${esc(c.email||'')}">${svg('mail')}Correo</a><button data-new="note" data-client="${id}">${svg('note')}Nota</button></div>
   <div class="stats3"><div><span>Facturado</span><b class="num">${money(st.total)}</b></div><div><span>Pendiente</span><b class="num" style="color:${st.overdue?'var(--red)':st.open?'var(--amber)':'inherit'}">${money(st.open)}</b></div><div><span>Recurrente</span><b class="num">${money(st.mrr)}<small style="font-size:11px;color:var(--t3)">/mes</small></b></div></div>
   <div class="na"><small>Próxima acción</small>${c.next_action?`${esc(c.next_action)} · <b>${fdate(c.next_action_date)}</b>`:'<span style="color:var(--t3)">Sin definir — un cliente sin siguiente paso se enfría.</span>'} <button class="btn b-soft b-sm" style="margin-left:6px;min-height:30px;padding:4px 10px" data-next="${id}">${c.next_action?'Cambiar':'Definir'}</button></div>
@@ -541,9 +611,11 @@ function vClient(id){
 function vProjects(){
   const f=S.f.pst;const list=S.d.projects.filter(p=>f==='todos'||(f==='activos'?['aceptado','en_curso','revision'].includes(p.status):f==='propuestas'?p.status==='propuesta':['entregado','cancelado'].includes(p.status)));
   const cnt=k=>S.d.projects.filter(p=>k==='todos'||(k==='activos'?['aceptado','en_curso','revision'].includes(p.status):k==='propuestas'?p.status==='propuesta':['entregado','cancelado'].includes(p.status))).length;
-  return `<div class="vh"><h2>Proyectos<small>Acuerdos, entregas y avance</small></h2><button class="btn b-main b-sm" data-new="project">${svg('plus')}Nuevo</button></div>
+  const actv=S.d.projects.filter(p=>['aceptado','en_curso','revision'].includes(p.status));const val=actv.reduce((a,p)=>a+Number(p.amount_total||0),0);
+  const late=actv.filter(p=>p.due_date&&p.due_date<today()).length;const soon=actv.filter(p=>p.due_date&&p.due_date>=today()&&diffDays(p.due_date,today())<=7).length;
+  return `${hero({icon:'box',title:'Proyectos',sub:'Acuerdos, entregas y avance',big:actv.length,lbl:actv.length===1?'proyecto en curso':'proyectos en curso',stats:[[money(val),'En curso','var(--blue)'],[soon,'Entregas esta semana','var(--amber)'],[late,'Atrasados',late?'var(--red)':'']],act:`<button class="btn b-vc" data-new="project">${svg('plus')}Nuevo proyecto</button>`})}
   <div class="seg">${[['activos','En curso'],['propuestas','Propuestas'],['cerrados','Cerrados'],['todos','Todos']].map(([k,l])=>`<button class="${f===k?'on':''}" data-pst="${k}">${l} ${cnt(k)}</button>`).join('')}</div>
-  <div class="list">${list.length?list.map(projCard).join(''):`<div class="empty"><b>Nada por aquí</b>Crea un proyecto para registrar el acuerdo, los entregables y el plan de pagos.<br><button class="btn b-main" data-new="project">${svg('plus')}Nuevo proyecto</button></div>`}</div>`;
+  ${list.length?Object.keys(PST).map(k=>{const g=list.filter(p=>p.status===k);return g.length?grp(PST[k][0],g.length,PST[k][1])+`<div class="list">${g.map(projCard).join('')}</div>`:''}).join(''):`<div class="list"><div class="empty"><b>Nada por aquí</b>Crea un proyecto para registrar el acuerdo, los entregables y el plan de pagos.<br><button class="btn b-main" data-new="project">${svg('plus')}Nuevo proyecto</button></div></div>`}`;
 }
 function projCard(p){const c=C(p.client_id);const d=p.due_date?diffDays(p.due_date,today()):null;const dl=p.deliverables||[];const dn=dl.filter(x=>x.d).length;
   const paid=S.d.payments.filter(x=>x.project_id===p.id&&x.status==='pagado').reduce((a,x)=>a+Number(x.amount),0);
@@ -557,8 +629,8 @@ function vProject(id){
   const p=P(id);if(!p)return vProjects();const c=C(p.client_id);const pays=S.d.payments.filter(x=>x.project_id===id);const dl=p.deliverables||[];
   const paid=pays.filter(x=>x.status==='pagado').reduce((a,x)=>a+Number(x.amount),0);const planned=pays.filter(x=>x.status!=='cancelado').reduce((a,x)=>a+Number(x.amount),0);
   return `<button class="btn b-soft b-sm" data-back-client="${p.client_id}" style="margin-bottom:12px">${svg('arrowL')}${esc(c?.name||'Proyectos')}</button>
-  <div class="dh"><span class="av" style="background:${PST[p.status][1]}">${svg('box')}</span><div style="flex:1;min-width:0"><h3>${esc(p.title)}</h3><p>${esc(c?.name||'')}${c?.company?' · '+esc(c.company):''}</p></div><button class="ib" data-edit-project="${id}" aria-label="Editar">${svg('edit')}</button></div>
-  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><select class="chip" data-status-project="${id}" style="background:var(--surf);color:${PST[p.status][1]};border-color:${PST[p.status][1]}55">${Object.entries(PST).map(([k,v])=>`<option value="${k}" ${k===p.status?'selected':''}>${v[0]}</option>`).join('')}</select></div>
+  <div class="dhc"><span class="av" style="background:${PST[p.status][1]};color:#07070A">${svg('box')}</span><h3>${esc(p.title)}</h3><p>${esc(c?.name||'')}${c?.company?' · '+esc(c.company):''}</p><button class="ib" data-edit-project="${id}" aria-label="Editar">${svg('edit')}</button>
+  <div class="tagrow"><select class="chip" data-status-project="${id}" style="background:var(--surf);color:${PST[p.status][1]};border-color:${PST[p.status][1]}55">${Object.entries(PST).map(([k,v])=>`<option value="${k}" ${k===p.status?'selected':''}>${v[0]}</option>`).join('')}</select></div></div>
   <div class="stats3"><div><span>Importe</span><b class="num">${money(p.amount_total)}</b></div><div><span>Cobrado</span><b class="num" style="color:var(--lime)">${money(paid)}</b></div><div><span>${p.monthly_fee?'Cuota':'Por cobrar'}</span><b class="num">${p.monthly_fee?money(p.monthly_fee)+'<small style="font-size:11px;color:var(--t3)">/mes</small>':money(Math.max(0,p.amount_total-paid))}</b></div></div>
   <div class="card" style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px"><span style="color:var(--t2)">Avance</span><b>${p.progress||0}%</b></div><div class="bar"><i style="width:${p.progress||0}%"></i></div>
   <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--t3);margin-top:10px"><span>Inicio: ${fdate(p.start_date)}</span><span>Entrega: <b style="color:var(--t1)">${fdate(p.due_date)}</b></span></div></div>
@@ -581,17 +653,23 @@ function vPayments(){
   const list=all.filter(flt).sort((a,b)=>f==='pagados'?String(b.paid_at).localeCompare(String(a.paid_at)):String(a.due_date||'9').localeCompare(String(b.due_date||'9')));
   const sum=arr=>arr.reduce((a,p)=>a+Number(p.amount),0);
   const op=all.filter(p=>['pendiente','vencido'].includes(payState(p)));const ov=all.filter(p=>payState(p)==='vencido');
-  return `<div class="vh"><h2>Cobros<small>Lo que te deben y lo cobrado</small></h2><button class="btn b-main b-sm" data-new="payment">${svg('plus')}Nuevo</button></div>
-  <div class="kpis" style="grid-template-columns:repeat(2,1fr);margin-bottom:14px"><div class="kpi" style="--c:var(--amber)"><span><i></i>Por cobrar</span><b class="num">${money(sum(op))}</b><small>${op.length} pagos</small></div><div class="kpi" style="--c:var(--red)"><span><i></i>Vencido</span><b class="num" style="color:${ov.length?'var(--red)':'inherit'}">${money(sum(ov))}</b><small>${ov.length} por reclamar</small></div></div>
+  const m=today().slice(0,7);const paidM=all.filter(p=>p.status==='pagado'&&(p.paid_at||'').startsWith(m));
+  return `${hero({icon:'euro',title:'Cobros',sub:'Lo que te deben y lo que ya entró',big:money(sum(op)),bigC:1,lbl:'por cobrar',stats:[[money(sum(ov)),`Vencido · ${ov.length}`,ov.length?'var(--red)':''],[money(sum(paidM)),'Cobrado este mes','var(--lime)'],[op.length,'Pagos abiertos','']],act:`<button class="btn b-vc" data-new="payment">${svg('plus')}Nuevo pago</button>${ov.length?`<button class="btn b-soft" data-remind-overdue>${svg('send')}Recordar vencidos</button>`:''}`})}
   <div class="seg">${[['abiertos','Abiertos'],['vencidos','Vencidos'],['pagados','Pagados'],['todos','Todos']].map(([k,l])=>`<button class="${f===k?'on':''}" data-payf="${k}">${l}</button>`).join('')}</div>
-  ${ov.length&&f!=='pagados'?`<button class="btn b-grad b-block" style="margin-bottom:12px" data-remind-overdue>${svg('send')}Preparar recordatorios de vencidos (${ov.length})</button>`:''}
-  <div class="list">${list.length?list.map(itPay).join(''):`<div class="empty"><b>${f==='vencidos'?'Nada vencido 🎉':'Sin pagos aquí'}</b>${f==='vencidos'?'Todos tus clientes están al día.':'Registra pagos desde un proyecto o con el botón +.'}</div>`}</div>`;
+  ${list.length?payGroups(list,f):`<div class="list">`+`<div class="empty"><b>${f==='vencidos'?'Nada vencido 🎉':'Sin pagos aquí'}</b>${f==='vencidos'?'Todos tus clientes están al día.':'Registra pagos desde un proyecto o con el botón +.'}</div></div>`}`;
+}
+function payGroups(list,f){
+  if(f==='pagados'){const by={};list.forEach(p=>{const k=(p.paid_at||'').slice(0,7)||'sin fecha';(by[k]=by[k]||[]).push(p)});return Object.entries(by).map(([k,g])=>grp(k==='sin fecha'?k:new Date(k+'-15').toLocaleDateString('es-ES',{month:'long',year:'numeric'}),money(g.reduce((a,p)=>a+Number(p.amount),0)),'#C6FF3D')+`<div class="list">${g.map(itPay).join('')}</div>`).join('')}
+  const t=today();const G=[['Vencidos','#FF5C7A',p=>payState(p)==='vencido'],['Esta semana','#FFB547',p=>payState(p)==='pendiente'&&p.due_date&&diffDays(p.due_date,t)<=7],['Este mes','#22D3EE',p=>payState(p)==='pendiente'&&p.due_date&&diffDays(p.due_date,t)>7&&diffDays(p.due_date,t)<=31],['Más adelante','#8B5CF6',p=>payState(p)==='pendiente'&&(!p.due_date||diffDays(p.due_date,t)>31)],['Pagados','#C6FF3D',p=>payState(p)==='pagado'],['Cancelados','#6F7489',p=>payState(p)==='cancelado']];
+  return G.map(([l,c,fn])=>{const g=list.filter(fn);return g.length?grp(l,money(g.reduce((a,p)=>a+Number(p.amount),0)),c)+`<div class="list">${g.map(itPay).join('')}</div>`:''}).join('');
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-payf]');if(b){S.f.pay=b.dataset.payf;render()}});
 
 /* ---------- EMBUDO ---------- */
 function vPipeline(){
-  return `<div class="vh"><h2>Embudo<small>Mueve cada oportunidad hasta cerrarla</small></h2><button class="btn b-main b-sm" data-new="client">${svg('plus')}Lead</button></div>
+  const op=S.d.clients.filter(c=>['lead','contactado','propuesta','negociacion'].includes(c.status));const won=S.d.clients.filter(c=>['activo','finalizado'].includes(c.status)).length;const lost=S.d.clients.filter(c=>c.status==='perdido').length;
+  const rate=won+lost?Math.round(won/(won+lost)*100):0;
+  return `${hero({icon:'kanban',title:'Embudo de ventas',sub:'Mueve cada oportunidad hasta cerrarla',big:money(op.reduce((a,c)=>a+Number(c.estimated_value||0),0)),bigC:1,lbl:'valor en negociación',stats:[[op.length,'Oportunidades','var(--violet)'],[won,'Ganados','var(--lime)'],[rate+'%','Tasa de cierre','']],act:`<button class="btn b-vc" data-new="client">${svg('plus')}Nuevo lead</button>`})}
   <div class="kb">${PIPE.concat(['pausado','perdido']).map(s=>{const cs=S.d.clients.filter(c=>c.status===s);const val=cs.reduce((a,c)=>a+Number(c.estimated_value||0),0);
     return `<div class="kcol"><h4 style="--c:${CST[s][1]}">${CST[s][0]} <em>${cs.length}${val?' · '+money(val):''}</em></h4>${cs.map(c=>`<div class="kc"><button style="text-align:left;width:100%" data-open-client="${c.id}"><b>${esc(c.name)}</b><span>${esc(c.company||c.business_type||'')}</span></button><div class="kr"><strong>${c.estimated_value?money(c.estimated_value):''}</strong><div class="mv"><button data-move="${c.id}|-1" aria-label="Etapa anterior">${svg('arrowL')}</button><button data-move="${c.id}|1" aria-label="Siguiente etapa">${svg('arrowR')}</button></div></div></div>`).join('')||'<div style="font-size:12.5px;color:var(--t3);padding:6px 4px">Vacío</div>'}</div>`}).join('')}</div>
   <p style="font-size:12.5px;color:var(--t3);margin-top:10px">Desliza para ver todas las etapas. Las flechas mueven al cliente de etapa.</p>`;
@@ -600,7 +678,7 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-move
 
 /* ---------- AJUSTES ---------- */
 function vMore(){
-  return `<div class="vh"><h2>Ajustes<small>Tu panel, tus reglas</small></h2></div>
+  return `${hero({icon:'settings',title:'Ajustes',sub:'Tus datos, copias de seguridad y seguridad'})}
   <div class="sec-t">Tus datos para los mensajes</div>
   <form class="card fg" id="cfgForm">
     <div class="f"><label>Tu nombre (saludo del panel)</label><input name="name" value="${esc(CFG.name)}"></div>
